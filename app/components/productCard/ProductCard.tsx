@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Star, ShoppingCart } from 'lucide-react';
 
 interface ProductCardProps {
@@ -23,10 +23,11 @@ export default function ProductCard({
   return (
     <div className="group">
       <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 mb-4">
-        <Image
+        <img
           src={image}
           alt={title}
-          fill
+          // fill
+          // sizes=""
           className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
         />
       </div>

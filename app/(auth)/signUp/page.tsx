@@ -35,13 +35,12 @@ const SignUpPage = () => {
     } catch (err) {
       console.error("Registration error:", err);
       setErrorMessage("Sign up unsuccessful! Please  try again...");
-
     }
   };
 
   return (
-<div className="flex items-center justify-center min-h-screen bg-[url('/images/authbg.png')] bg-center bg-cover bg-no-repeat p-4">
-<div>
+    <div className="flex items-center justify-center min-h-screen bg-[url('/images/authbg.png')] bg-center bg-cover bg-no-repeat p-4">
+      <div>
         {error && <p className="text-red-600 text-sm mb-3">{errorMessage}</p>}
         {successMessage && (
           <p className="text-green-600 text-sm mb-3">{successMessage}</p>
@@ -108,7 +107,16 @@ const SignUpPage = () => {
                 )}
               </button>
             </div>
-
+            <div className="text-gray-600 space-y-2 text-sm">
+              <div className="flex items-center gap-2">
+              <img src="/Checkicon.svg" alt="Check" className="w-4 h-4" />
+              <span>Must be at least 8 characters</span>
+              </div>
+              <div className="flex items-center gap-2">
+              <img src="/Checkicon.svg" alt="Check" className="w-4 h-4" />
+                <span>Must contain one special character</span>
+              </div>
+            </div>
             <button
               type="submit"
               className="w-full bg-green-700 font-semibold text-white p-2 rounded-md hover:bg-green-800"
@@ -121,9 +129,9 @@ const SignUpPage = () => {
 
         <div className="mt-6 flex  justify-center ">
           <p className="bg-white text-center px-6 py-3 rounded-3xl shadow-lg flex align-center justify-center text-sm  text-gray-600 ">
-            Don&apos;t have an account?{" "}
+            Already have an account?{" "}
             <Link href="/login" className="text-green-600 font-semibold">
-              Sign up
+              Log in
             </Link>
           </p>
         </div>

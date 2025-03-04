@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const login = async (email: string, password: string) => {
     dispatch({ type: "LOADING" });
     try {
-      const res = await fetch("http://localhost:5000/login", {
+      const res = await fetch("https://altaria-interview-question.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const register = async (name: string, email: string, password: string) => {
     dispatch({ type: "LOADING" });
     try {
-      const res = await fetch("http://localhost:5000/register", {
+      const res = await fetch("https://altaria-interview-question.onrender.com/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),

@@ -2,43 +2,66 @@
 import React from "react";
 
 import ProductCard from "./productCard/ProductCard";
-
-const products = [
-  {
-    id: 1,
-    title: "Stiletto Heels",
-    price: 25000,
-    image: "/images/red-hills.png",
-    rating: 5,
-    reviewCount: 45,
-  },
-  {
-    id: 2,
-    title: "Golden Rings",
-    price: 300000,
-    image: "/images/bracelet.png",
-    rating: 5,
-    reviewCount: 12,
-  },
-  {
-    id: 3,
-    title: "Bucket Hat",
-    price: 12000,
-    image: "/images/cap.png",
-    rating: 5,
-    reviewCount: 56,
-  },
-  {
-    id: 4,
-    title: "Sport Shoes",
-    price: 40000,
-    image: "/images/kicks.png",
-    rating: 5,
-    reviewCount: 72,
-  },
-];
+import { useProducts } from "@/context/ProductContext";
 
 export default function NewArrivals() {
+  const { products, loading } = useProducts();
+
+  if (loading) return <p>Loading...</p>;
+
+  const dummyproducts = [
+    {
+      id: 1,
+      title: "Stiletto Heels",
+      price: 25000,
+      image: "/images/red-hills.png",
+      rating: 5,
+      reviewCount: 45,
+    },
+    {
+      id: 2,
+      title: "Golden Rings",
+      price: 300000,
+      image: "/images/bracelet.png",
+      rating: 5,
+      reviewCount: 12,
+    },
+    {
+      id: 3,
+      title: "Bucket Hat",
+      price: 12000,
+      image: "/images/cap.png",
+      rating: 5,
+      reviewCount: 56,
+    },
+    {
+      id: 4,
+      title: "Sport Shoes",
+      price: 40000,
+      image: "/images/kicks.png",
+      rating: 5,
+      reviewCount: 72,
+    },
+  ];
+
+  const latestProducts = products?.length
+    ? products.slice(-4).map((product) => {
+        const totalRatings =
+          product.rating?.reduce((sum, r) => sum + r.rating, 0) || 0;
+        const averageRating = product.rating?.length
+          ? totalRatings / product.rating.length
+          : 0;
+
+        return {
+          id: product.id,
+          title: product.name,
+          price: product.price,
+          image: product.image_uri,
+          rating: averageRating,
+          reviewCount: product.rating?.length || 0,
+        };
+      })
+    : dummyproducts;
   return (
     <section className="w-full mx-auto py-16 bg-white">
       <div className="w-[92%] mx-auto">
@@ -56,7 +79,7 @@ export default function NewArrivals() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
+          {latestProducts.map((product) => (
             <ProductCard
               key={product.id}
               title={product.title}
