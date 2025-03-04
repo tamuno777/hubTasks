@@ -1,4 +1,5 @@
 'use client';
+import React from "react";
 
 import { ShieldCheck, Package, Truck, BadgeCheck } from 'lucide-react';
 

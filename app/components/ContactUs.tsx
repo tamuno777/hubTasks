@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 
 import { useContact } from "@/context/ContactContext";
 import Image from "next/image";
