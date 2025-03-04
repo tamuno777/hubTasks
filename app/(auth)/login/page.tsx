@@ -107,7 +107,7 @@ const LoginPage = () => {
 
         <div className="mt-6 flex  justify-center ">
           <p className="bg-white text-center px-6 py-3 rounded-3xl shadow-lg flex align-center justify-center text-sm  text-gray-600 ">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/signUp" className="text-green-600 font-semibold">
               Sign up
             </Link>
