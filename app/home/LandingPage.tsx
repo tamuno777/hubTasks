@@ -2,7 +2,7 @@ import React from "react";
 import ContactUs from "../components/ContactUs";
 import CustomerExperience from "../components/CustomerExperience";
 import FeaturedCollections from "../components/FeaturedCollections";
-import Footer from "../components/sharedLayout/Footer";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import NewArrivals from "../components/NewArrivals";
