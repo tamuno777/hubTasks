@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+**Title:** Convert Figma UI to Responsive Web Page & Integrate APIs  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### **Overview**  
+This Repo implements the technical phase requirements by converting the provided Figma UI design into a fully responsive web page and integrating API endpoints for authentication, product listing, and a contact form.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Implemented Features**  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### **1. Figma to Web UI**  
+- Converted the Sign-Up, Login, and Landing pages from Figma into pixel-perfect, responsive components.  
+- Ensured adaptability across different screen sizes (desktop, tablet, and mobile).  
+- Maintained consistency with the provided design specifications.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### **2. API Integration**  
+- **User Authentication:** Implemented Register/Login functionality.  
+- **Product Listing:** Dynamically fetches and displays products from the API.  
+- **Contact Form:** Integrated a form to send messages via API.  
+- Applied appropriate state management and handled API loading/error states gracefully.  
 
-## Learn More
+### **3. Considerations & Omissions**  
+- **Protected Routes:** Not implemented since the project only includes authentication and a landing page. In an eCommerce site, the landing page is typically accessible without authentication, and users are only required to log in when performing restricted actions like checkout. Hence, middleware was not set up.  
+- **Testing:** Minimal unit tests were written, as there are limited reusable components aside from the landing page.  
 
-To learn more about Next.js, take a look at the following resources:
+### **How to Test**  
+- Navigate to `/login` or `/signUp` to access authentication pages.  
+- Interact with the landing page to verify responsiveness and API integrations.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Next Steps & Enhancements**  
+- Implement middleware for protected routes when additional authenticated features are added.  
+- Improve test coverage as more reusable components are introduced.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
