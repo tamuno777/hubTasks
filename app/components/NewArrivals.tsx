@@ -1,37 +1,37 @@
-'use client';
+"use client";
 
-import ProductCard from './ProductCard';
+import ProductCard from "./productCard/ProductCard";
 
 const products = [
   {
     id: 1,
-    title: 'Stiletto Heels',
+    title: "Stiletto Heels",
     price: 25000,
-    image: '/images/red-hills.png',
+    image: "/images/red-hills.png",
     rating: 5,
     reviewCount: 45,
   },
   {
     id: 2,
-    title: 'Golden Rings',
+    title: "Golden Rings",
     price: 300000,
-    image: '/images/bracelet.png',
+    image: "/images/bracelet.png",
     rating: 5,
     reviewCount: 12,
   },
   {
     id: 3,
-    title: 'Bucket Hat',
+    title: "Bucket Hat",
     price: 12000,
-    image: '/images/cap.png',
+    image: "/images/cap.png",
     rating: 5,
     reviewCount: 56,
   },
   {
     id: 4,
-    title: 'Sport Shoes',
+    title: "Sport Shoes",
     price: 40000,
-    image: '/images/kicks.png',
+    image: "/images/kicks.png",
     rating: 5,
     reviewCount: 72,
   },
@@ -70,4 +70,4 @@ export default function NewArrivals() {
       </div>
     </section>
   );
-} 
+}

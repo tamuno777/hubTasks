@@ -1,5 +1,5 @@
 'use client';
-
+import React from "react";
 import Image from 'next/image';
 import { Star, ShoppingCart } from 'lucide-react';
 
@@ -38,6 +38,7 @@ export default function ProductCard({
         <div className="flex items-center gap-1 mt-1">
           {[...Array(5)].map((_, i) => (
             <Star
+            
               key={i}
               className={`w-4 h-4 ${
                 i < rating
